@@ -33,7 +33,7 @@ def data_to_hash(arr):
             result.append(hash.hexdigest())
       return result            
 
-def markel(arr):
+def markle(arr):
       print(arr)
       arr.reverse()
       if len(arr) == 1:
@@ -54,12 +54,12 @@ def markel(arr):
                   result.append(add_hash(tmp))
                   tmp = []
       
-      markel(result)
+      markle(result)
 def main():
       #data = [11,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
       data = get_local_data('./doc')
       hashdata = data_to_hash(data)
-      markel(hashdata)
+      markle(hashdata)
 
 if __name__ == '__main__':
       main()
