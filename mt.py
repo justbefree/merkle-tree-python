@@ -55,7 +55,11 @@ def markel(arr):
                   tmp = []
       
       markel(result)
-#data = [11,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-data = get_local_data('./doc')
-hashdata = data_to_hash(data)
-markel(hashdata)
+def main():
+      #data = [11,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+      data = get_local_data('./doc')
+      hashdata = data_to_hash(data)
+      markel(hashdata)
+
+if __name__ == '__main__':
+      main()
