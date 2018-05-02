@@ -4,7 +4,8 @@ def fastRoot(values, digestFn):
   if not hasattr(digestFn, '__call__'):
     raise TypeError('The second argument must be a function, but ' + str(type(digestFn)) + ' was given !')
   length = len(values)
-  results = values
+  results = []
+  results.extend(values)
   while length > 1:
     j = 0
     for i in range(0, length, 2):

@@ -13,6 +13,13 @@ def _derive(values, digestFn):
 
   return results
 
+# def _deepCopy(values):
+#   result = []
+#   for i in range(0, len(values)):
+#     result.append(values[i])
+
+#   return result
+
 def merkle (values, digestFn):
   if type(values) != list:
     raise TypeError('The first argument must be an array, but ' + str(type(values)) + ' was given')
@@ -21,11 +28,13 @@ def merkle (values, digestFn):
   if len(values) == 1:
     return values
 
-  levels = [values]
+  # levels = _deepCopy(values) #这里必须是深拷贝
+  levels = []
+  levels.extend(values)
   level = values
   while len(level) > 1:
     level = _derive(level, digestFn)
-    levels.append(level)
+    levels.extend(level)
 
   return levels
 
